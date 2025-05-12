@@ -1,5 +1,14 @@
 const stack = require('../src/stack');
 
+// Funktion som körs innan varje test för att rensa stacken ifall det finns tillagda element (vi vill att stacken ska vara tom innan varje testfall körs).
+beforeEach(() => {
+    // En while-loop som kontrollerar ifall stacken är tom, är den inte tom så körs funktinen "pop()" som tar bort element från stacken.
+    // Om "stack.peek()" inte är samma som undefined (dvs tom), poppa (ta bort) element från stacken.
+    while (stack.peek() !== undefined) {
+        stack.pop();
+    }
+});
+
 test('peek on empty stack returns undefined', () => {
     expect(stack.peek()).toBeUndefined();
 });
