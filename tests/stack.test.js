@@ -17,3 +17,14 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBeDefined();
     expect(stack.peek()).toBe(42);
 });
+
+
+// Test som är tänkt att misslyckas.
+test('Funktionen "size()" returnerar antalet element som finns i stacken', () => {
+    // pushar (lägger till) 3 element till stacken.
+    stack.push("Jacob");
+    stack.push(7);
+    stack.push("Alexander");
+    // Förväntad storlet (size) på stacken är 3
+    expect(stack.size()).toBe(3); // Detta är tänkt att misslyckats då funktionen "size()" inte implementerats.
+});
