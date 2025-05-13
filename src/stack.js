@@ -17,3 +17,7 @@ exports.peek = function () {
     return _.last(stack);
 }
 
+// Returnerar antalet element som finns i stacken.
+exports.size = function () {
+    return stack.length;
+};

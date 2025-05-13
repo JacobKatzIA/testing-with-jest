@@ -32,3 +32,12 @@ describe('Clicking "Pusha till stacken"', () => {
         await alert.accept();
     });
 });
+
+// Browser test som är tänkt att misslyckas (då elementet med id="encourage-message" inte är tillagt i mitt html-dokument).
+test('Should show the user a message to encourage them to add an element to the stack', async () => {
+    // Försök att hitta elementet med ID encourage-message.
+    let encourageMessage = await driver.findElement(By.id('encourage-message'));
+    // Verifiera att elementet innehåller följande text "please add an element to the stack!".
+    let text = await encourageMessage.getText();
+    expect(text).toEqual("Please add an element to the stack!");
+},  defaultTimeout);
